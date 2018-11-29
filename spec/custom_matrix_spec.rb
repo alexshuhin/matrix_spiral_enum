@@ -2,6 +2,16 @@ require 'rspec'
 require 'custom_matrix'
 
 describe CustomMatrix do
+  describe 'performance' do
+    let!(:matrix) { CustomMatrix.new(1000) }
+
+    it 'should perform taking an 10 first even elements under 10ms' do
+      expect{
+        # matrix...
+      }.to perform_under(10).ms
+    end
+  end
+
   context 'creating' do
     context 'when size specified' do
       it 'has 25 elements' do
